@@ -83,15 +83,17 @@ WSGI_APPLICATION = 'e_commerce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': "e_commerce",
-        "HOST": "localhost",
-        "USER": "root",
-        "PASSWORD": "root",
-        "OPTIONS": {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
-    },
+        'NAME': 'e_commerce',
+        'ENGINE': 'mysql.connector.django',   # 'django.db.backends.mysql'
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'autocommit': True,
+        },
+    }
 }
 
 # Password validation
